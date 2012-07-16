@@ -52,6 +52,6 @@ img {
 
 #my_menu li:hover {
     cursor: pointer;
-    background: #eaffff; 
+    color: #404040;
 }
 

@@ -1,1 +1,127 @@
-My GitHub PAge
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blender Scripts by zeffii</title>
+
+    <style>
+
+        body {
+            font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+            font-size: .7em;
+            margin: 0;
+            padding: 0;
+            background: #efefef;
+        }
+
+        a { 
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            background: #eaff8f;
+        }
+
+        img {
+            opacity:0;
+            -moz-transition: opacity 1s; /* Firefox 4 */
+            -webkit-transition: opacity 1s; /* Safari and Chrome */
+            -o-transition: opacity 1s;
+            transition: opacity 1s;
+        }​
+
+
+        #page_div {
+            background: white;
+            border: 1px dashed #efefef;
+        }
+
+        #my_menu {
+            float: left;
+            width: 100px;
+            padding: 0 50px 2px 3px;
+            margin: 50px 00px 50px 50px;
+            background: #fff;
+            border-left: 2px solid #7f7f7f;
+        }
+
+        #project {
+            position: relative;
+            float: left;
+            padding: 0px 50px 50px 23px;
+            margin: 50px 50px 50px 0;
+            background: #fafafa;
+            width: 600px;
+            height: auto;
+        }
+
+        #my_menu li {
+            list-style:none;
+        }
+
+        #my_menu li:hover {
+            cursor: pointer;
+            background: #eaffff; 
+        }
+
+  </style>
+
+  <script type="text/javascript" src="jq/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript">
+
+    var script_table = {};
+    script_table['project_1'] = "Monster_Tile_Renderer.txt";
+    script_table['project_2'] = "project_2.txt";
+
+    // takes a string path and returns file as string
+    function read_content(myUrl) {
+        
+        var result = null;
+        $.ajax( {   url: myUrl, 
+                  type: 'get', 
+                  dataType: 'html',
+                  async: false,
+                  success: function(data) { result = data; } 
+                }
+        );
+        FileReady = true;
+        return result;
+    };
+
+    // binds a message to each menu item, when clicked replace content
+    // of the project div with that found in the corresponding text.
+    $(document).ready(function() {  
+
+        for( project_id in script_table){
+            // project_name is project_id with all instances of underscore replaced by a space
+            var project_name = project_id.replace(/_/g,' ');
+
+            // populate #my_menu with <li id="project_2">project 2</li>
+            $('#my_menu').append('<li id=\"' + project_id + '\">' + project_name +'</li>');
+            
+            // binds the click message while we are at it.
+            $('#'+ project_id).bind('click', function(e) {
+            var a = $(this).attr('id');
+            var location = script_table[a];
+            $('#project').empty();
+            $('#project').append(read_content(location));
+            console.log(a);
+            });
+
+        }
+
+    });
+
+
+  </script>
+
+
+</head>
+<body>
+  <div id="page_div">
+    <ul id="my_menu"></ul>
+    
+    <div id="project"></div>
+  </div>
+
+</body>
+</html>
+

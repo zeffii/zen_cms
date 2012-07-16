@@ -1,0 +1,12 @@
+project 1 | 2010/2012 | blender
+<ul>
+<li>
+<a href="https://github.com/zeffii/Monster_Tile_Renderer/blob/master/stitch_images_23.py">autostitcher_23.py</a> Python 2.x and PIL, very minimal comes with no documentation, read the script.<br>
+</li>
+<li>
+<a href="https://github.com/zeffii/Monster_Tile_Renderer/blob/master/stitch_images_24.py">autostitcher_24.py</a> Python 3.x and PIL, also minimal but you can run this from inside the images folder.<br>
+</li>
+<li>
+<a href="https://github.com/zeffii/rawr/tree/master/monster_render">autostitcher.py</a> Python 2.x and PIL, has a help section, is a command line tool. </li>
+</ul>
+<img onload="this.style.opacity='1';"  src="images/scuzeMoi.png" width="550">

@@ -1,3 +1,5 @@
+// zen_cms is MIT licensed.
+
 var script_table = {};
 script_table['project_1'] = "Monster_Tile_Renderer.txt";
 script_table['project_2'] = "project_2.txt";

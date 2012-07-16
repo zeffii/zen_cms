@@ -1,0 +1,2 @@
+This was written before bmesh was added to the standard (trunk) blender release. It draws the geometry as proposed by the fillet / chamfer settings using bgl (blender openGL) and only modifies geometry once the user accepts the settings.<br><br>
+Currently the script isn't very practical to use, but for those interested in drawing openGL to the 3dview it might serve as inspiration.

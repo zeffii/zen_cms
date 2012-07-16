@@ -1,0 +1,3 @@
+this adds a vertex object at the current 3d cursor location<br>
+<br>
+some stuff. etc .etc 

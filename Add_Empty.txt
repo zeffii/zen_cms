@@ -1,0 +1,1 @@
+this addon allows you to add new Empty Objects to every vertex currently selected in an object. What this does behind the scenes is deselect the current object and place Empties as the global location of all those selected vertices and then return you to the original object in edit mode.

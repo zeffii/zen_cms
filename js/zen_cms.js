@@ -26,7 +26,7 @@ function read_content(myUrl) {
 };
 
 // binds a message to each menu item, when clicked replace content
-// of the project div with that found in the corresponding text.
+// of the project div with that found in the corresponding txt from script_table.
 $(document).ready(function() {  
 
     for( project_id in script_table){

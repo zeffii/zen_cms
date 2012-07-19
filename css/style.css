@@ -44,8 +44,8 @@ img {
     background: #fafafa;
     width: 600px;
     height: auto;
-    border-top: 5px solid #999;
-    border-bottom: 5px solid #999;
+    /*border-top: 5px solid #999;
+    border-bottom: 5px solid #999;*/
 }
 
 #my_menu li {

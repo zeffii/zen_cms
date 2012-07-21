@@ -23,10 +23,8 @@ function read_content(myUrl) {
     FileReady = true;
 
     // using showdown
-    // var converter = new Showdown.converter();
-    // var marked_up = converter.makesHtml(result);    
-
-    return result; // marked_up;
+    var converter = new Showdown.converter();
+    return converter.makeHtml(result);
 };
 
 

@@ -21,7 +21,12 @@ function read_content(myUrl) {
             }
     );
     FileReady = true;
-    return result;
+
+    // using showdown
+    var converter = new Showdown.converter();
+    var marked_up = converter.makesHtml(result);    
+
+    return marked_up;
 };
 
 
@@ -42,9 +47,6 @@ $(document).ready(function() {
         $('#project').empty();
 
         var content = read_content(location);
-        //var converter = new Showdown.converter();
-        //var marked_up = converter.makesHtml(content);
-
         $('#project').append(content);
         console.log(a);
         });

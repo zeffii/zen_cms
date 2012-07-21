@@ -23,10 +23,10 @@ function read_content(myUrl) {
     FileReady = true;
 
     // using showdown
-    var converter = new Showdown.converter();
-    var marked_up = converter.makesHtml(result);    
+    // var converter = new Showdown.converter();
+    // var marked_up = converter.makesHtml(result);    
 
-    return marked_up;
+    return result; // marked_up;
 };
 
 
@@ -42,13 +42,13 @@ $(document).ready(function() {
         
         // binds the click message while we are at it.
         $('#'+ project_id).bind('click', function(e) {
-        var a = $(this).attr('id');
-        var location = script_table[a];
-        $('#project').empty();
+            var a = $(this).attr('id');
+            var location = script_table[a];
+            $('#project').empty();
 
-        var content = read_content(location);
-        $('#project').append(content);
-        console.log(a);
+            var content = read_content(location);
+            $('#project').append(content);
+            console.log(a);
         });
 
     }

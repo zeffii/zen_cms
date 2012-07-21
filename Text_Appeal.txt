@@ -1,7 +1,5 @@
-
-<div class='hmm'>
 <script src="https://gist.github.com/3118495.js?file=haha.py"></script>
-</div>
+
 
 
 

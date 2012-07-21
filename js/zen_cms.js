@@ -22,9 +22,8 @@ function read_content(myUrl) {
     );
     FileReady = true;
 
-    // using showdown
     var converter = new Showdown.converter();
-    result = result.replace(/\r\n/g,'\n');
+    // result = result.replace(/\r\n/g,'\n');
     return converter.makeHtml(result);
 
 };

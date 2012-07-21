@@ -22,9 +22,10 @@ function read_content(myUrl) {
     );
     FileReady = true;
 
-    var converter = new Showdown.converter();
+    // var converter = new Showdown.converter();
     // result = result.replace(/\r\n/g,'\n');
-    return converter.makeHtml(result);
+    // return converter.makeHtml(result);
+    return result;
 
 };
 

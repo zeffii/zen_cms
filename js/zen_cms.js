@@ -10,7 +10,6 @@ script_table['Text_Appeal'] = "Text_Appeal.txt";
 script_table['GL_Fillet'] = "GL_Fillet.txt";
 script_table['GL_Calliper'] = "GL_Calliper.txt";
 
-// takes a string path and returns file as string
 function read_content(myUrl) {
     
     var result = null;
@@ -25,8 +24,8 @@ function read_content(myUrl) {
     return result;
 };
 
-// binds a message to each menu item, when clicked replace content
-// of the project div with that found in the corresponding txt from script_table.
+
+
 $(document).ready(function() {  
 
     for( project_id in script_table){
@@ -41,7 +40,12 @@ $(document).ready(function() {
         var a = $(this).attr('id');
         var location = script_table[a];
         $('#project').empty();
-        $('#project').append(read_content(location));
+
+        var content = read_content(location);
+        //var converter = new Showdown.converter();
+        //var marked_up = converter.makesHtml(content);
+
+        $('#project').append(content);
         console.log(a);
         });
 

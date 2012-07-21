@@ -24,8 +24,8 @@ function read_content(myUrl) {
 
     // using showdown
     var converter = new Showdown.converter();
-    var markdown_source = result.replace(/\r\n/g,'\n');
-    return converter.makeHtml(markdown_source);
+    result = result.replace(/\r\n/g,'\n');
+    return converter.makeHtml(result);
 
 };
 

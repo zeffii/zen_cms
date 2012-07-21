@@ -40,17 +40,4 @@ does travel with the .blend and can be a source of confusion to a recipient. Gen
 style quotes will ease the blocking points.
 
 and more code here
-`
-	class Markdown(PageHandler):
-		def get(self, page_name):
-			if self.user:
-				#check is it an existing page?
-				found_valid_page, found_db_reference = get_page_if_exists(page_name)
-				# empty line
-				if found_valid_page:
-					logger("Existing Page Displayed as markdown")
-					page_content = found_db_reference.get().page_content[0]
-					# empty line
-					self.response.headers['Content-Type'] = 'application/markdown'
-					self.write(page_content)
-`
+<script src="https://gist.github.com/3118495.js?file=haha.py"></script>

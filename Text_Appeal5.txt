@@ -1,0 +1,100 @@
+Blender
+=========
+
+The Blender directory contains several full addons and part scripts.
+
+  - Mesh Editing
+  - Tile Rendering (Monster Tile Renderer)
+  - Text Editor addons
+
+The difference between an addon and a script is mostly the addition of boilerplate code to make the addon show up in the addon loader in user-preferences.
+
+> "The scripts and addons presented here are mostly writen out of the need to have
+> some kind of automation turn into a one click event. If you use any software relentlessly
+> you will want to avoid the scenario that turns you into a complex input machine rather than
+> a creative user of the software. Scripting is the answer."
+
+
+I've written a tonne of Blender scripts but this repo focusses only on those that i frequently return to to steal code from, or *actually* use a lot.  
+
+
+Installing Addons is easy.
+-----------
+
+To install an Addon properly:
+
+1. Inside `blender/../scripts/` plonk the content of addons_contrib
+2. In `User Preferences -> addons -> all` look for the addon name and tick it
+3. You don't need to install addons permanently, it's probably a good idea not to
+4. If you find yourself using an addon a lot, then certainly configure blender to include it permanently
+5. Permanent installation I do using `ctrl+U` after enabling an addon right from a default start.blend file.
+6. There are other ways, so use those if you are more comfortable
+
+
+Running non Addon scripts
+--------------
+
+One way to run scripts that aren't equipped with the addon boilerplate is to simply open them in the text editor and press `ctrl+p` or the run button.
+There is some convenience to this method: you can save the script with the .blend and the script will travel with it. The downside is that the script
+does travel with the .blend and can be a source of confusion to a recipient. Generally a short description of the script at the very top using docstring 
+style quotes will ease the blocking points.
+
+and more code here
+
+
+    def func_majeur():
+        island = 4
+        coney = island
+        return
+
+    func majeur()
+
+
+but it should allow script too..
+
+<code>
+<pre class="prettyprint">
+
+# this script separates all faces, generates new verts where previously 
+# verts were shared. -> "unshare all shared goemetry" / explode
+
+import bpy
+
+
+verts = []
+polygons = []
+
+ob = bpy.context.active_object
+vert_collection = ob.data.vertices
+
+# get all verts
+main_counter = 0 
+for polygon in ob.data.polygons:
+
+    # we might have mixed tris/quads so cannot populate arbitrarily
+    temp_poly = []
+    
+    # each vert is represented by an index in the master list of vertices
+    for vert in polygon.vertices:
+        # this gives local coordinates, if you want.
+        verts.append(vert_collection[vert].co)
+
+        # or the following line instead, if you want global values.
+        # verts.append(ob.matrix_world * vert_collection[vert].co)
+        temp_poly.append(main_counter)
+        main_counter += 1
+    polygons.append(temp_poly)        
+
+  
+mesh_data = bpy.data.meshes.new("cube_mesh_data")  
+mesh_data.from_pydata(verts, [], polygons)  
+mesh_data.update() # (calc_edges=True) not needed here  
+  
+cube_object = bpy.data.objects.new("unshared_Object", mesh_data)  
+  
+scene = bpy.context.scene    
+scene.objects.link(cube_object)    
+cube_object.select = True   
+
+</pre>
+</code>

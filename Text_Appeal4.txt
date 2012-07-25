@@ -52,13 +52,13 @@ and more code here
 
 but it should allow script too..
 
-<pre class="prettyprint lang-python">
+<pre class="prettyprint lang-javascript">
 
 $(document).ready(function() {  
 
     for( project_id in script_table){
         var project_name = project_id.replace(/_/g,' ');
-        $('#my_menu').append('<li id=\"' + project_id + '\">' + project_name +'</li>');
+        $('#my_menu').append("<li id=\"" + project_id + "\">"" + project_name +"</li>"");
 
         $('#'+ project_id).bind('click', function(e) {
             var a = $(this).attr('id');

@@ -6,7 +6,7 @@ script_table['Monster_Tile_Renderer'] = "Monster_Tile_Renderer.txt";
 script_table['Add_Vertex'] = "Add_Vertex.txt";
 script_table['Add_Empty'] = "Add_Empty.txt";
 script_table['Import_AFM'] = "Monster_Tile_Renderer.txt";
-script_table['Text_Appeal'] = "Text_Appeal.txt";
+script_table['Text_Appeal'] = "Text_Appeal4.txt";
 script_table['GL_Fillet'] = "GL_Fillet.txt";
 script_table['GL_Calliper'] = "GL_Calliper.txt";
 
@@ -22,11 +22,11 @@ function read_content(myUrl) {
     );
     FileReady = true;
 
-    // var converter = new Showdown.converter();
+    var converter = new Showdown.converter();
     // result = result.replace(/\r\n/g,'\n');
-    // return converter.makeHtml(result);
+    return converter.makeHtml(result);
     // result = markdown.toHTML( result );
-    return result;
+    // return result;
 
 };
 
@@ -49,6 +49,7 @@ $(document).ready(function() {
 
             var content = read_content(location);
             $('#project').append(content);
+            prettyPrint();
             console.log(a);
         });
 

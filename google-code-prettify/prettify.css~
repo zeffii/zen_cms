@@ -1,0 +1,55 @@
+.pln{color:#aaa}
+
+@media screen{
+	.str{
+		color:Chartreuse;
+		background-color:#424242;				
+	}
+	.dec{color:Chartreuse}
+	.kwd{color:DeepSkyBlue}
+	.com{
+		color:#e2e2e2;
+		background-color: black;
+	}
+	.typ{color:#fff}
+	.lit{color:Chartreuse}		/*integers*/
+	.pun{color:white}
+	.opn,.clo{color:#0f0}
+	.tag{color:Chartreuse}
+	.atn{color:Chartreuse}
+	.atv{color:Chartreuse}
+	.dec{color:Chartreuse}
+	.var{color:Chartreuse}
+	.fun{color:Chartreuse}
+}
+
+@media print,projection{
+	.str{color:#060}
+	.kwd{color:#006;font-weight:bold}
+	.com{color:#600;font-style:italic}
+	.typ{color:#404;font-weight:bold}
+	.lit{color:#044}
+	.pun,.opn,.clo{color:#440}
+	.tag{color:#006;font-weight:bold}
+	.atn{color:#404}
+	.atv{color:#060}
+}
+
+pre.prettyprint{
+	font-family: 'Ubuntu Mono', sans-serif;
+	font-size: 13px;
+	padding:2px 12px 2px 12px;
+	border:1px solid #d5d5d5;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background-color: #1e2426;
+}
+
+ol.linenums{
+	margin-top:0;margin-bottom:0}
+
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{
+	list-style-type:none}
+
+li.L1,li.L3,li.L5,li.L7,li.L9{
+	background:#eee}

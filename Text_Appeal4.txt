@@ -52,26 +52,49 @@ and more code here
 
 but it should allow script too..
 
-<pre class="prettyprint lang-javascript">
+<code>
+<pre class="prettyprint">
 
-$(document).ready(function() {  
+# this script separates all faces, generates new verts where previously 
+# verts were shared. -> "unshare all shared goemetry" / explode
 
-    for( project_id in script_table){
-        var project_name = project_id.replace(/_/g,' ');
-        $('#my_menu').append("<li id=\"" + project_id + "\">"" + project_name +"</li>"");
+import bpy
 
-        $('#'+ project_id).bind('click', function(e) {
-            var a = $(this).attr('id');
-            var location = script_table[a];
-            $('#project').empty();
 
-            var content = read_content(location);
-            $('#project').append(content);
-            console.log(a);
-        });
+verts = []
+polygons = []
 
-    }
+ob = bpy.context.active_object
+vert_collection = ob.data.vertices
 
-});
+# get all verts
+main_counter = 0 
+for polygon in ob.data.polygons:
+
+    # we might have mixed tris/quads so cannot populate arbitrarily
+    temp_poly = []
+    
+    # each vert is represented by an index in the master list of vertices
+    for vert in polygon.vertices:
+        # this gives local coordinates, if you want.
+        verts.append(vert_collection[vert].co)
+
+        # or the following line instead, if you want global values.
+        # verts.append(ob.matrix_world * vert_collection[vert].co)
+        temp_poly.append(main_counter)
+        main_counter += 1
+    polygons.append(temp_poly)        
+
+  
+mesh_data = bpy.data.meshes.new("cube_mesh_data")  
+mesh_data.from_pydata(verts, [], polygons)  
+mesh_data.update() # (calc_edges=True) not needed here  
+  
+cube_object = bpy.data.objects.new("unshared_Object", mesh_data)  
+  
+scene = bpy.context.scene    
+scene.objects.link(cube_object)    
+cube_object.select = True   
 
 </pre>
+</code>

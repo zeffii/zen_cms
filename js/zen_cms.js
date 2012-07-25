@@ -38,7 +38,6 @@ $(document).ready(function() {
         // project_name is project_id with all instances of underscore replaced by a space
         var project_name = project_id.replace(/_/g,' ');
 
-        // populate #my_menu with <li id="project_2">project 2</li>
         $('#my_menu').append('<li id=\"' + project_id + '\">' + project_name +'</li>');
         
         // binds the click message while we are at it.

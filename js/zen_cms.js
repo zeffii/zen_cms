@@ -7,8 +7,8 @@ script_table['Add_Vertex'] = "Add_Vertex.txt";
 script_table['Add_Empty'] = "Add_Empty.txt";
 script_table['Import_AFM'] = "Monster_Tile_Renderer.txt";
 script_table['Text_Appeal'] = "Text_Appeal5.txt";
-script_table['GL_Fillet'] = "GL_Fillet.txt";
-script_table['GL_Calliper'] = "GL_Calliper.txt";
+script_table['On_Naming'] = "On_Naming.markdown";
+script_table['On_Comments'] = "On_Comments.markdown";
 
 function read_content(myUrl) {
     

@@ -41,7 +41,7 @@ $(document).ready(function() {
         $('#my_menu').append('<li id=\"' + project_id + '\">' + project_name +'</li>');
         
         // binds the click message while we are at it.
-        $('#'+ project_id).bind('click', function(e) {
+        $('#'+ project_id).on('click', function(e) {
             var a = $(this).attr('id');
             var location = script_table[a];
             $('#project').empty();

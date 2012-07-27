@@ -1,4 +1,4 @@
-## On Naming (conventions)
+## On Naming
 
 This article will discuss the concepts to consider when deciding on names for any part of your applications. Naming conventions trickle down into all parts of your programs. Deciding on good names for your files, functions, variables and classes is critical to making your life as a programmer easier. I want to cover a few conventions that are language agnostic, then further sections will touch specific languages.
 
@@ -8,7 +8,7 @@ No matter what language you write (English, German.. JavaScript, Python) for you
 
 #### Soft Rules
 
-The soft rules aren't usually part of the formal specification of a language, they come in a variety of types including (and not limited to) : Naming, Formatting and Order. 
+Soft rules aren't usually part of the formal specification of a language, but as languages gain popularity we often see certain styles emerge. Styles cover topics such as (but not limited to): Naming, Formatting, Order and Commenting. 
 
 etc
 

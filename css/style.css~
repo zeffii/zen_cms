@@ -3,7 +3,7 @@ body {
     font-size: .7em;
     margin: 0;
     padding: 0;
-    background: #efefef;
+    background: #fefefe;
 }
 
 a { 
@@ -28,12 +28,13 @@ img {
 }
 
 #my_menu {
+    position: fixed;
     float: left;
     width: 120px;
     padding: 0 10px 2px 3px;
     margin: 20px 0 0 20px;
     background: #fff;
-    border-left: 2px solid #7f7f7f;
+    /*border-left: 2px solid #7f7f7f;*/
 }
 
 #project {
@@ -41,7 +42,7 @@ img {
     float: left;
     padding: 0px 50px 50px 23px;
     margin: 20px 0 0 20px;
-    background: #fafafa;
+    background: #ffffff;
     width: 600px;
     height: auto;
     /*border-top: 5px solid #999;
@@ -55,5 +56,6 @@ img {
 #my_menu li:hover {
     cursor: pointer;
     color: #404040;
+    background: #fafafa;
 }
 

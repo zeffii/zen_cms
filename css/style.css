@@ -58,3 +58,9 @@ img {
     background: #fafafa;
 }
 
+#theme_footer {
+    position:fixed;
+    bottom: .2em;
+    left: 70px;
+    float: left;
+}

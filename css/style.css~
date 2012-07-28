@@ -28,7 +28,6 @@ img {
 }
 
 #my_menu {
-    position: fixed;
     float: left;
     width: 120px;
     padding: 0 10px 2px 3px;
@@ -59,3 +58,9 @@ img {
     background: #fafafa;
 }
 
+#theme_footer {
+    position:fixed;
+    bottom: .2em;
+    left: 70px;
+    float: left;
+}

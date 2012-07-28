@@ -12,6 +12,26 @@
   <script type="text/javascript" src="google-code-prettify/prettify.js"></script>  
   <script type="text/javascript" src="js/showdown.js"></script>
   <script type="text/javascript" src="js/zen_cms.js"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){ 
+      
+      $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+          $('.scrollup').fadeIn();
+        } else {
+          $('.scrollup').fadeOut();
+        }
+      }); 
+      
+      $('.scrollup').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+      });
+ 
+    });
+  </script>
+
 </head>
 <body>
   <div id="page_div">
@@ -22,6 +42,7 @@
     <div id="theme_footer">
       <small>light theme mostly by <a href="https://github.com/orderedlist">orderedlist</a></small>
     </div>
+    <a href="#" class="scrollup">scroll</a>
 </body>
 </html>
 

@@ -74,8 +74,9 @@ $(document).ready(function() {
 
     $('#theme_switch').on('click', function(e) {
         if ($('#theme_options').is(':hidden')) {
-            $('#theme_options').show();
-            $('#theme_closer').show();
+            $('#theme_options').fadeIn(200);
+            //$('#theme_closer').show();
+            $('#theme_closer').fadeIn(200);
         }
 
     });

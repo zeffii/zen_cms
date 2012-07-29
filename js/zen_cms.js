@@ -5,7 +5,7 @@ script_table['Edge_Tools_VTX'] = "Edge_Tools.txt";
 script_table['Monster_Tile_Renderer'] = "Monster_Tile_Renderer.txt";
 script_table['Add_Vertex'] = "Add_Vertex.txt";
 script_table['Add_Empty'] = "Add_Empty.txt";
-script_table['Import_AFM'] = "Monster_Tile_Renderer.txt";
+script_table['On_Markdown'] = "On_Markdown.markdown";
 script_table['Text_Appeal'] = "Text_Appeal5.txt";
 script_table['On_Naming'] = "On_Naming.markdown";
 script_table['On_Comments'] = "On_Comments.markdown";
@@ -31,6 +31,7 @@ function read_content(myUrl) {
 };
 
 
+// my jquery is weak :(
 
 $(document).ready(function() {  
 
@@ -52,7 +53,7 @@ $(document).ready(function() {
             var content = read_content(location);
             $('#project').append(content);
             prettyPrint();
-            console.log(a);
+            // console.log(a);
         });
 
     }
@@ -70,5 +71,22 @@ $(document).ready(function() {
         return false;
     });
 
+
+    $('#theme_switch').on('click', function(e) {
+        if ($('#theme_options').is(':hidden')) {
+            $('#theme_options').show();
+            $('#theme_closer').show();
+        }
+
+    });
+
+    $('#theme_closer').on('click', function(e) {
+        $('#theme_options').hide();
+        $('#theme_closer').hide();
+    });
+
+
+
 });
+
 

@@ -35,12 +35,15 @@ function read_content(myUrl) {
 $(document).ready(function() {  
 
     for( project_id in script_table){
-        // project_name is project_id with all instances of underscore replaced by a space
         var project_name = project_id.replace(/_/g,' ');
 
-        $('#my_menu').append('<li id=\"' + project_id + '\">' + project_name +'</li>');
+        // populate the menu one list item at a time
+        $('<li></li>', {
+            text: project_name,
+            id: project_id
+        }).appendTo('#my_menu');
         
-        // binds the click message while we are at it.
+        // attaches unique click event handler to each list item
         $('#'+ project_id).on('click', function(e) {
             var a = $(this).attr('id');
             var location = script_table[a];

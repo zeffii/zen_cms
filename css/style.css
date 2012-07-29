@@ -105,3 +105,8 @@ img {
     display: none;
     cursor: pointer;
 }
+
+#aware_color {
+    color: red;
+    /*font-weight: bold;*/
+}
